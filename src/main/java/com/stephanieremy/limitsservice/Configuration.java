@@ -1,4 +1,12 @@
-public class LimitConfiguration {
+package com.stephanieremy.limitsservice;
+
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+@Component
+@ConfigurationProperties("limits-service")
+public class Configuration {
 
     private int minimum;
     private int maximum;
@@ -16,15 +24,6 @@ public class LimitConfiguration {
     }
 
     public void setMaximum(int maximum) {
-        this.maximum = maximum;
-    }
-
-    public LimitConfiguration(int minimum) {
-        this.minimum = minimum;
-    }
-
-    public LimitConfiguration(int minimum, int maximum) {
-        this.minimum = minimum;
         this.maximum = maximum;
     }
 }
